@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Component</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .book {
+            text-align: center;
+            border: 1px solid red;
+            display: inline-block;
+            padding: 32px;
+            border-radius: 6px;
+            margin: 8px;
+        }
+        .book_title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .book_subtitle {
+            font-size: 16px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <article class="book">
+                <div class="book_subtitle">제목</div>
+                <div class="book_title">HTML 강좌</div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
