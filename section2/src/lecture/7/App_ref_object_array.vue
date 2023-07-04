@@ -14,7 +14,7 @@ export default {
 		});
 		count.value++;
 		count.value++;
-		// console.log('state.count: ', state.count);
+		console.log('state.count: ', state.count);
 
 		// ref => Array
 		const message = ref('Hello');
