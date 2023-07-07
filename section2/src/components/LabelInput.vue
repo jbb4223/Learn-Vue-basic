@@ -1,13 +1,8 @@
 <template>
-	<label>
+	<label class="form-label" id="child-id">
 		{{ label }}
-		<!--		<input v-model="value" type="text" />-->
-		<input
-			type="text"
-			:value="modelValue"
-			@input="$emit('update:modelValue', $event.target.value)"
-		/>
 	</label>
+	<input type="text" v-bind="$attrs" class="form-control" :value="value" />
 </template>
 
 <script>
@@ -16,19 +11,16 @@ import { computed } from 'vue';
 export default {
 	props: ['modelValue', 'label'],
 	emits: ['update:modelValue'],
-	// setup(props, { emit }) {
-	// 	const value = computed({
-	// 		get() {
-	// 			return props.modelValue;
-	// 		},
-	// 		set(value) {
-	// 			emit('update:modelValue', value);
-	// 		},
-	// 	});
-	// 	return { value };
-
 	setup(props, { emit }) {
-		return {};
+		const value = computed({
+			get() {
+				return props.modelValue;
+			},
+			set(value) {
+				emit('update:modelValue', value);
+			},
+		});
+		return { value };
 	},
 };
 </script>
