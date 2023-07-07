@@ -7,7 +7,7 @@
 		<div class="container text-center">
 			<div class="row g-3">
 				<div class="col col-4" v-for="post in posts" :key="post.id">
-					<AppCard
+					<PostItem
 						:title="post.title"
 						:contents="post.contents"
 						:type="post.type"
@@ -30,13 +30,13 @@
 </template>
 
 <script>
-import AppCard from '@/components/AppCard.vue';
+import PostItem from '@/components/PostItem.vue';
 import PostCreate from '@/components/PostCreate.vue';
 import LabelInput from '@/components/LabelInput.vue';
 import { reactive, ref } from 'vue';
 export default {
 	components: {
-		AppCard,
+		PostItem,
 		PostCreate,
 		LabelInput,
 	},
