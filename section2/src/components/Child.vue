@@ -2,6 +2,7 @@
 	<div class="card">
 		<div class="card-header">Child Component</div>
 		<div class="card-body">
+			<p>appMessage: {{ appMessage }}</p>
 			<DeepChild></DeepChild>
 		</div>
 	</div>
@@ -9,12 +10,14 @@
 
 <script>
 import DeepChild from '@/components/DeepChild.vue';
+import { inject } from 'vue';
 export default {
 	components: {
 		DeepChild,
 	},
 	setup() {
-		return {};
+		const appMessage = inject('app-message');
+		return { appMessage };
 	},
 };
 </script>
